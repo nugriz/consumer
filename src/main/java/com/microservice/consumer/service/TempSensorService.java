@@ -27,7 +27,7 @@ public class TempSensorService {
         TempSensor tempSensor = modelMapper.map(tempSensorDTO, TempSensor.class);
         TempSensor persistedTempSensor = tempSensorRepository.save(tempSensor);
 
-        log.info("food order persisted {}", persistedTempSensor);
+        log.info("temp sensor persisted {}", persistedTempSensor);
     }
 
 }

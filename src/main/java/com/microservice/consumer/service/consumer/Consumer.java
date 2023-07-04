@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 public class Consumer {
 
-    private static final String orderTopic = "${topic.name}";
+    private static final String topicName = "${topic.name}";
 
     private final ObjectMapper objectMapper;
     private final TempSensorService tempSensorService;
@@ -26,7 +26,7 @@ public class Consumer {
         this.tempSensorService = tempSensorService;
     }
 
-    @KafkaListener(topics = orderTopic)
+    @KafkaListener(topics = topicName)
     public void consumeMessage(String message) throws JsonProcessingException {
         log.info("message consumed {}", message);
 
